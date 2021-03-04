@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
+import BattleScene from './scenes/BattleScene';
 import BootScene from './scenes/BootScene'
 import WorldScene from './scenes/WorldScene'
+import UIScene from './scenes/UIScene'
 
 var config = {
     type: Phaser.AUTO,
@@ -18,7 +20,9 @@ var config = {
     },
     scene: [
         BootScene,
-        WorldScene
+        // WorldScene,
+        BattleScene,
+        UIScene
     ]
 };
 var game = new Phaser.Game(config);

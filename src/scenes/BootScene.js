@@ -1,7 +1,9 @@
 import Phaser from 'phaser';
 import spriteSheet from './../assets/spritesheet.png'
 import map from './../assets/map/map.json'
-import players from './../assets/hero.png'
+import players from './../assets/RPG_assets.png'
+import blueDragon from './../assets/dragonblue.png'
+import orangeDragon from './../assets/dragonorange.png'
 
 export default class BootScene extends Phaser.Scene {
   constructor() { 
@@ -17,10 +19,14 @@ export default class BootScene extends Phaser.Scene {
     
     // our two characters
     this.load.spritesheet('player', players, { frameWidth: 16, frameHeight: 16 });
+
+    //dragons
+    this.load.image('dragonblue', blueDragon);
+    this.load.image('dragonorrange', orangeDragon);
   }
 
   create() {
     // start the WorldScene
-    this.scene.start('WorldScene');
+    this.scene.start('BattleScene');
     }
 }
