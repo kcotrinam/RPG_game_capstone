@@ -1,4 +1,4 @@
-class Message extends Phaser.GameObjects.Container {
+export default class Message extends Phaser.GameObjects.Container {
     constructor(scene, events) {
         super(scene, 160, 30)
         var graphics = this.scene.add.graphics();
@@ -14,7 +14,7 @@ class Message extends Phaser.GameObjects.Container {
         this.visible = false;
     }
 
-    showMessage() {
+    showMessage(text) {
         this.text.setText(text);
         this.visible = true;
         if (this.hideEvent)
