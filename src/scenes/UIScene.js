@@ -97,6 +97,7 @@ export default class UIScene extends Phaser.Scene {
     }
 }
 
+
 var MenuItem = new Phaser.Class({
     Extends: Phaser.GameObjects.Text,
     
@@ -180,41 +181,53 @@ var Menu = new Phaser.Class({
     }
 });
 
-var HeroesMenu = new Phaser.Class({
-    Extends: Menu,
+// var HeroesMenu = new Phaser.Class({
+//     Extends: Menu,
     
-    initialize:
+//     initialize:
             
-    function HeroesMenu(x, y, scene) {
-        Menu.call(this, x, y, scene);                    
-    }
-});
+//     function HeroesMenu(x, y, scene) {
+//         Menu.call(this, x, y, scene);                    
+//     }
+// });
 
-var ActionsMenu = new Phaser.Class({
-    Extends: Menu,
-    
-    initialize:
-            
-    function ActionsMenu(x, y, scene) {
-        Menu.call(this, x, y, scene);   
+class HeroesMenu extends Menu {
+    constructor(x, y, scene) {
+        super(x, y, scene)
+    }
+}
+
+class ActionsMenu extends Menu {
+    constructor(x, y, scene) {
+        super(x, y, scene)
         this.addMenuItem("Attack");
-    },
-    confirm: function() {      
-        this.scene.events.emit("SelectEnemies");        
     }
-    
-});
 
-var EnemiesMenu = new Phaser.Class({
-    Extends: Menu,
-    
-    initialize:
-            
-    function EnemiesMenu(x, y, scene) {
-        Menu.call(this, x, y, scene);        
-    },       
-    confirm: function() {        
+    confirm() {
+        this.scene.events.emit("SelectEnemies");
+    }
+}
+
+class EnemiesMenu extends Menu {
+    constructor(x, y, scene) {
+        super(x, y, scene)
+    }
+
+    confirm() {
         this.scene.events.emit("Enemy", this.menuItemIndex);
     }
-});
+}
+
+// var EnemiesMenu = new Phaser.Class({
+//     Extends: Menu,
+    
+//     initialize:
+            
+//     function EnemiesMenu(x, y, scene) {
+//         Menu.call(this, x, y, scene);        
+//     },       
+//     confirm: function() {        
+//         this.scene.events.emit("Enemy", this.menuItemIndex);
+//     }
+// });
 
