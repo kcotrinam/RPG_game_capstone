@@ -1,33 +1,8 @@
 import Phaser from 'phaser';
-// import { Menu, MenuItem, HeroesMenu, ActionsMenu, EnemiesMenu } from './../game/Menus';
 
-export default class UIScene extends Phaser.Scene {
-  constructor(){ 
-    super({key: 'UIScene'})
-  }
-
-  create() {
-    this.graphics = this.add.graphics();
-    this.graphics.lineStyle(1, 0xffffff);
-    this.graphics.fillStyle(0x031f4c, 1);        
-    this.graphics.strokeRect(2, 150, 90, 100);
-    this.graphics.fillRect(2, 150, 90, 100);
-    this.graphics.strokeRect(95, 150, 90, 100);
-    this.graphics.fillRect(95, 150, 90, 100);
-    this.graphics.strokeRect(188, 150, 130, 100);
-    this.graphics.fillRect(188, 150, 130, 100);
-
-    // basic container to hold all menus
-    this.menus = this.add.container();
-
-    this.heroesMenu = new HeroesMenu(195, 153, this);
-    
-  }
-}
-
-class MenuItem extends Phaser.GameObjects.Text {
-  constructor(scene, x, y, text) {
-    super(scene, x, y, text, { color: '#ffffff', align: 'left', fontSize: 15})
+export class MenuItem extends Phaser.GameObjects.Text {
+  constructor(x, y, text, scene) {
+    super(x, y, text, scene)
   }
 
   select() {
@@ -39,7 +14,7 @@ class MenuItem extends Phaser.GameObjects.Text {
   }
 }
 
-class Menu extends Phaser.GameObjects.Container {
+export class Menu extends Phaser.GameObjects.Container {
   constructor(x, y, scene, heroes) {
     super(x, y, scene, heroes)
     this.menuItems = [];
@@ -91,13 +66,13 @@ class Menu extends Phaser.GameObjects.Container {
   }
 }
 
-class HeroesMenu extends Menu {
+export class HeroesMenu extends Menu {
   constructor(x, y, scene) {
     super(x, y, scene)
   }
 }
 
-class ActionsMenu extends Menu {
+export class ActionsMenu extends Menu {
   constructor(x, y, scene) {
     super(x, y, scene)
     this.addMenuItem('Attack');
@@ -108,7 +83,7 @@ class ActionsMenu extends Menu {
   }
 }
 
-class EnemiesMenu extends Menu {
+export class EnemiesMenu extends Menu {
   constructor(x, y, scene) {
     super(x, y, scene)
   }
