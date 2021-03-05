@@ -1,3 +1,5 @@
+import Phaser from 'phaser'
+
 export default class Message extends Phaser.GameObjects.Container {
     constructor(scene, events) {
         super(scene, 160, 30)
@@ -7,7 +9,7 @@ export default class Message extends Phaser.GameObjects.Container {
         graphics.fillStyle(0x031f4c, 0.3);
         graphics.strokeRect(-90, -15, 180, 30);
         graphics.fillRect(-90, -15, 180, 30);
-        this.text = new Phaser.GameObjects.Text(scene, 0, 0, "", { color: "#ffffff", align: "center", fontSize: 13, wordWrap: { width: 160, useAdvancedWrap: true } });
+        this.text = new Phaser.GameObjects.Text(scene, 0, 0, "", { color: "#ffffff", align: "center", fontSize: 13, wordWrap: { width: 170, useAdvancedWrap: true } });
         this.add(this.text);
         this.text.setOrigin(0.5);
         events.on("Message", this.showMessage, this);

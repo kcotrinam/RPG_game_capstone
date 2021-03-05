@@ -1,11 +1,10 @@
 import Phaser from 'phaser';
-import Menu, { HeroesMenu, ActionsMenu, EnemiesMenu } from './../game/Menus';
+import { HeroesMenu, ActionsMenu, EnemiesMenu } from './../game/Menus'
 import Message from './../game/Message'
 
-
 export default class UIScene extends Phaser.Scene {
-    constructor(){ 
-        super({key: 'UIScene'})
+    constructor() {
+        super({ key: "UIScene" })
     }
 
     create() {
@@ -70,14 +69,17 @@ export default class UIScene extends Phaser.Scene {
     }
 
     onEnemy(index) {
+        // when the enemy is selected, we deselect all menus and send event with the enemy id
         this.heroesMenu.deselect();
         this.actionsMenu.deselect();
         this.enemiesMenu.deselect();
         this.currentMenu = null;
-        this.battleScene.receivePlayerSelection('attack', index);
+        this.battleScene.receivePlayerSelection("attack", index);
     }
 
     onPlayerSelect(id) {
+        // when its player turn, we select the active hero item and the first action
+        // then we make actions menu active
         this.heroesMenu.select(id);
         this.actionsMenu.select(0);
         this.currentMenu = this.actionsMenu;
@@ -112,5 +114,3 @@ export default class UIScene extends Phaser.Scene {
         }
     }
 }
-
-
