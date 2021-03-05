@@ -20,7 +20,7 @@ var config = {
     },
     scene: [
         BootScene,
-        // WorldScene,
+        WorldScene,
         BattleScene,
         UIScene
     ]
