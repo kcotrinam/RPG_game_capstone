@@ -31,8 +31,8 @@ export default class BootScene extends Phaser.Scene {
     // enemies
     this.load.image('dragonblue', blueDragon);
     this.load.image('dragonorange', orangeDragon);
-    this.load.image('dragonwhite', bat);
-    this.load.image('dragonred', ghost);
+    this.load.image('bat', bat);
+    this.load.image('ghost', ghost);
 
     // audios
     this.load.audio('gameIntro', introSong);
