@@ -10,8 +10,8 @@ import orangeDragon from './../assets/dragonorange.png';
 import bat from './../assets/bat.gif';
 import ghost from './../assets/ghost.gif';
 import battleSong from './../assets/audios/Battle.mp3'
-import introSong from './../assets/audios/Intro.ogg'
-import worldSong from './../assets/audios/WorldMap.mp3'
+import introSong from './../assets/audios/Intro.mp3'
+import worldSong from './../assets/audios/WorldMap.wav'
 
 
 export default class BootScene extends Phaser.Scene {

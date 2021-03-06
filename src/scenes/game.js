@@ -82,7 +82,7 @@ export default class Game extends Phaser.Scene {
 
     if (window.bgMusic === false) {
       window.bgMusic = true;
-      // game.bgMusic.play();
+      game.bgMusic.play();
     }
   }
 }
