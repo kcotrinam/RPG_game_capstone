@@ -37,6 +37,11 @@ To get a local copy up and running follow these simple steps:
    4.1 [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) can be used to visualize the webapp in live version or
    4.2 execute on the command line `servor dist index.html 8080 --reload` and enter to your browser to `localhost:8080`.
 
+## :construction_worker: How to run tests?
+
+1. Move to the folder: `cd RPG_game_capstone`.
+2. Run `npm run test`.
+
 ## :bust_in_silhouette: Author
 
 👤 **Kevin Cotrina**
