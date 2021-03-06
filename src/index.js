@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import './scss/styles.scss'
+import './scss/styles.scss';
 import Phaser from 'phaser';
 import BootScene from './scenes/boot';
 import Game from './scenes/game';
