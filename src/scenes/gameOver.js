@@ -17,7 +17,7 @@ export default class GameOver extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor('black');
+    this.cameras.main.setBackgroundColor('#567d46');
 
     window.worldMusic = false;
     window.battleMusic = false;
@@ -39,7 +39,7 @@ export default class GameOver extends Phaser.Scene {
     this.add.text(
       game.config.width / 2,
       50,
-      'Dragon Quest', {
+      'Monsters Hunter', {
         fill: '#ffffff',
         fontSize: '32px',
         fontFamily: 'Georgias, Times, serif',

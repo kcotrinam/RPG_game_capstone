@@ -33,11 +33,11 @@ export default class Scores extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor('black');
+    this.cameras.main.setBackgroundColor('#567d46');
     this.add.text(
       game.config.width / 2,
       25,
-      'Dragon Quest', {
+      'Monsters Hunter', {
         fill: '#ffffff',
         fontSize: '32px',
         fontFamily: 'Georgias, Times, serif',

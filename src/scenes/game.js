@@ -27,11 +27,11 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBackgroundColor('black');
+    this.cameras.main.setBackgroundColor('#567d46');
     this.add.text(
       game.config.width / 2,
       25,
-      'Dragon Quest', {
+      'Monsters Hunter', {
         fill: '#ffffff',
         fontSize: '32px',
         fontFamily: 'Georgias, Times, serif',
@@ -63,7 +63,7 @@ export default class Game extends Phaser.Scene {
     this.scoresButton = this.add.text(
       game.config.width / 2,
       160,
-      'LEADERBOARD',
+      'SCORES',
       24, {
         fill: '#ffffff',
         fontSize: '26px',
