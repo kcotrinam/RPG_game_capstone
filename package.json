@@ -27,6 +27,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "phaser": "^3.52.0"
   }
 }
