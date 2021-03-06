@@ -1,10 +1,12 @@
+/* eslint-disable import/no-cycle */
+import Phaser from 'phaser';
 import BootScene from './scenes/boot';
 import Game from './scenes/game';
 import GetName from './scenes/getName';
 import Instructions from './scenes/instructions';
 import WorldScene from './scenes/world';
 import BattleScene from './scenes/battle';
-import UIScene from './scenes/ui'; 
+import UIScene from './scenes/ui';
 import Scores from './scenes/scores';
 import GameOver from './scenes/gameOver';
 

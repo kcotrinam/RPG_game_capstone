@@ -2,16 +2,16 @@
 
 import Phaser from 'phaser';
 import game from '../index';
-import spritesheet from './../assets/spritesheet.png';
-import map from './../assets/map/map.json';
-import players from './../assets/RPG_assets.png';
-import blueDragon from './../assets/dragonblue.png';
-import orangeDragon from './../assets/dragonorange.png';
-import bat from './../assets/bat.gif';
-import ghost from './../assets/ghost.gif';
-import battleSong from './../assets/audios/Battle.mp3'
-import introSong from './../assets/audios/Intro.mp3'
-import worldSong from './../assets/audios/WorldMap.wav'
+import spritesheet from '../assets/spritesheet.png';
+import map from '../assets/map/map.json';
+import players from '../assets/RPG_assets.png';
+import blueDragon from '../assets/dragonblue.png';
+import orangeDragon from '../assets/dragonorange.png';
+import bat from '../assets/bat.gif';
+import ghost from '../assets/ghost.gif';
+import battleSong from '../assets/audios/Battle.mp3';
+import introSong from '../assets/audios/Intro.mp3';
+import worldSong from '../assets/audios/WorldMap.wav';
 
 
 export default class BootScene extends Phaser.Scene {

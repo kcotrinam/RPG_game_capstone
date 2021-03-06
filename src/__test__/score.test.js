@@ -1,6 +1,7 @@
-import scoreboard from './../api/scoreboard';
+import scoreboard from '../api/scoreboard';
 
 const axios = require('axios');
+
 const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 const key = 'Zl4d7IVkemOTTVg2fUdz';
 
