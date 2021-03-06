@@ -9,7 +9,7 @@
 
 ## :red_circle: Live Demo:
 
-[Live Demo Link](monsters-hunter.netlify.app)
+[Live Demo Link](https://monsters-hunter.netlify.app/)
 
 ## :hammer: Built with
 
