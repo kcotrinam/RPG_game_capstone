@@ -45,7 +45,7 @@ export default class Scores extends Phaser.Scene {
     ).setOrigin(0.5);
 
       const scores = await scoreBoard()
-      this.displayLeaders(scores.result);
+      this.displayLeaders(scores);
 
     this.backButton = this.add.text(
       game.config.width / 2,
