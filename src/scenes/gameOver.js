@@ -2,7 +2,7 @@
 
 import Phaser from 'phaser';
 import game from '../index';
-import scoreboard, {setScore} from '../api/scoreboard';
+import {setScore} from '../api/scoreboard';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
