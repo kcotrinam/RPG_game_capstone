@@ -1,12 +1,42 @@
 import axios from 'axios';
 
 const key = 'Zl4d7IVkemOTTVg2fUdz';
+const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`
 
 export const scoreBoard = async () => {
-  const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`);
+  const response = await fetch(url);
   const json = response.json();
   return json
 }
+
+export const setScore = async (user, score) => {
+  console.log(user, score)
+  const submit = {
+    user,
+    score,
+  };
+  const post = JSON.stringify(submit);
+  const address = url;
+  const settings = {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: post,
+  };
+  const response = await fetch(address, settings);
+  const answer = await response.json();
+  return answer;
+};
+
+const sortScores = (obj) => {
+  const array = [];
+  for (let i = 0; i < obj.length; i += 1) {
+    array.push([obj[i].user, obj[i].score]);
+  }
+  return Array.from(array).sort((a, b) => b[1] - a[1]);
+};
 
 const scoreboard = (() => {
   const getScore = () => new Promise((resolve, reject) => {
@@ -36,6 +66,7 @@ const scoreboard = (() => {
   };
 
   const setScore = (user, score) => new Promise((resolve, reject) => {
+    // console.log(user, score)
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores/`;
     axios.post(url, { user, score }).then((res) => {
       resolve(res.data.result);

@@ -2,7 +2,7 @@
 
 import Phaser from 'phaser';
 import game from '../index';
-import scoreboard from '../api/scoreboard';
+import scoreboard, {setScore} from '../api/scoreboard';
 
 export default class GameOver extends Phaser.Scene {
   constructor() {
@@ -76,7 +76,7 @@ export default class GameOver extends Phaser.Scene {
       },
     ).setOrigin(0.5);
 
-    scoreboard.setScore(window.playerName, window.score);
+    setScore(window.playerName, window.score);
 
     this.backButton.setInteractive();
     this.backButtonAction();
