@@ -5,10 +5,10 @@ export default class Unit extends Phaser.GameObjects.Sprite {
     super(scene, x, y, texture, frame);
     this.type = type;
     if (type === 'Warrior') {
-      this.maxHP = 130;
+      this.maxHP = 100;
     }
     if (type === 'Mage') {
-      this.maxHP = 80;
+      this.maxHP = 50;
     }
 
     this.hp = hp;
@@ -25,8 +25,8 @@ export default class Unit extends Phaser.GameObjects.Sprite {
 
   attack(target) {
     if ((this.hp <= 40) && (this.type === 'Warrior' || this.type === 'Mage')) {
-      target.takeDamage(this.damage * 2);
-      this.scene.events.emit('Message', `${this.type} Attacks ${target.type} for ${this.damage * 2} damage`);
+      target.takeDamage(this.damage);
+      this.scene.events.emit('Message', `${this.type} Attacks ${target.type} for ${this.damage} damage`);
     } else {
       target.takeDamage(this.damage);
       this.scene.events.emit('Message', `${this.type} Attacks ${target.type} for ${this.damage} damage`);
