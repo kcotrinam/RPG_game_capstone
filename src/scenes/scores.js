@@ -2,7 +2,7 @@
 
 import Phaser from 'phaser';
 import game from '../index';
-import scoreboard from '../api/scoreboard';
+import scoreboard, {scoreBoard} from '../api/scoreboard';
 
 export default class Scores extends Phaser.Scene {
   constructor() {
@@ -16,7 +16,7 @@ export default class Scores extends Phaser.Scene {
   }
 
   displayLeaders(list) {
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 1; i < 6; i += 1) {
       if (i >= list.length) {
         break;
       }
@@ -32,7 +32,7 @@ export default class Scores extends Phaser.Scene {
     }
   }
 
-  create() {
+  async create() {
     this.cameras.main.setBackgroundColor('#567d46');
     this.add.text(
       game.config.width / 2,
@@ -44,6 +44,9 @@ export default class Scores extends Phaser.Scene {
       },
     ).setOrigin(0.5);
 
+      const scores = await scoreBoard()
+      this.displayLeaders(scores.result);
+
     this.backButton = this.add.text(
       game.config.width / 2,
       game.config.height - 20,
@@ -53,14 +56,6 @@ export default class Scores extends Phaser.Scene {
         fontFamily: 'Georgias, Times, serif',
       },
     ).setOrigin(0.5);
-
-    scoreboard.getScore().then((leaderboard) => {
-      const leaders = scoreboard.orderedScores(leaderboard);
-      this.displayLeaders(leaders);
-    }).catch(() => {
-      this.scene.start('Game');
-    });
-
 
     this.backButton.setInteractive();
     this.backButtonAction();

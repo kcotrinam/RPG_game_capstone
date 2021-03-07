@@ -2,6 +2,12 @@ import axios from 'axios';
 
 const key = 'Zl4d7IVkemOTTVg2fUdz';
 
+export const scoreBoard = async () => {
+  const response = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`);
+  const json = response.json();
+  return json
+}
+
 const scoreboard = (() => {
   const getScore = () => new Promise((resolve, reject) => {
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`;
@@ -10,7 +16,10 @@ const scoreboard = (() => {
     }).catch((error) => {
       reject(error.message);
     });
+
   });
+
+
 
   const orderedScores = (data) => {
     const arr = [...data];
