@@ -20,6 +20,35 @@
 - VS code
 - Phaser 3
 
+## Game Functionality
+
+### Concept
+
+- Control to the warrior to find monsters around the map.
+- Kill as many monsters as possible.
+- Avoid being killed by the 4 different monsters that exist in the world.
+
+### Controls
+
+You need a keyboard to control the Player Ship.
+
+- Press ⬆️ to move up.
+- Press :arrow_down: to move down.
+- Press ➡️ to go right.
+- Press ⬅️ to go left.
+
+When finding a monster.
+
+- Press ⬆️ or :arrow_down: to select the monster you want to attack.
+- Press <kbd>Space</kbd> to attack the monster.
+
+### Assets
+
+| Asset                                                                                                                                                                                     | Description      |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| ![Alien space ship](./src/assets/malehero.png) ![Alien space ship](./src/assets/femaleHero.png)                                                                                           | Heroes           |
+| ![Player Space ship](./src/assets/bat.gif)![Alien space ship](./src/assets/ghost.gif) ![Alien space ship](./src/assets/dragonorange.png) ![Alien space ship](./src/assets/dragonblue.png) | Enemies to kill. |
+
 ## :construction_worker: Getting Started
 
 To get a local copy up and running follow these simple steps:
