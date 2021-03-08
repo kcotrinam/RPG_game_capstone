@@ -1,44 +1,50 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
-
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "app.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "./",
-    assetModuleFilename: 'images/[name][ext][query]'
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: './',
+    assetModuleFilename: 'images/[name][ext][query]',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
-    })
+      filename: '[name].css',
+    }),
   ],
   module: {
     rules: [
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
-        ]
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg|mp3|wav|flac)$/i,
         type: 'asset/resource',
       },
-    ]
+    ],
   },
   optimization: {
     minimize: true,
@@ -47,7 +53,7 @@ module.exports = {
       new CssMinimizerPlugin(),
       new TerserPlugin({
         extractComments: false,
-      })
-    ]
-  }
-}
+      }),
+    ],
+  },
+};
