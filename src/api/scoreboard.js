@@ -1,7 +1,7 @@
 const key = 'Zl4d7IVkemOTTVg2fUdz';
 const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${key}/scores`;
 
-const sortScores = (data) => {
+export const sortScores = (data) => {
   const arr = [...data];
   arr.sort((a, b) => {
     if (a.score > b.score) {
@@ -18,7 +18,8 @@ const sortScores = (data) => {
 export const scoreBoard = async () => {
   const response = await fetch(url);
   const json = await response.json();
-  return sortScores(json.result);
+  return json.result
+  // return sortScores(json.result);
 };
 
 export const setScore = async (user, score) => {
