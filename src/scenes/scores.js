@@ -2,7 +2,7 @@
 
 import Phaser from 'phaser';
 import game from '../index';
-import {scoreBoard} from '../api/scoreboard';
+import { scoreBoard } from '../api/scoreboard';
 
 export default class Scores extends Phaser.Scene {
   constructor() {
@@ -44,8 +44,8 @@ export default class Scores extends Phaser.Scene {
       },
     ).setOrigin(0.5);
 
-      const scores = await scoreBoard()
-      this.displayLeaders(scores);
+    const scores = await scoreBoard();
+    this.displayLeaders(scores);
 
     this.backButton = this.add.text(
       game.config.width / 2,
